@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Abar-regular;
+    src: url(../assets/fonts/Abar/AbarLowFaNum-Regular.woff2);
+}
+
+@font-face {
+    font-family: Abar-semi-bold;
+    src: url(../assets/fonts/Abar/AbarLowFaNum-SemiBold.woff2);
+}
+
+
+@font-face {
+    font-family: Abar-bold;
+    src: url(../assets/fonts/Abar/AbarLowFaNum-Bold.woff2);
+}
+
+@font-face {
+    font-family: YekanBakh-regular;
+    src: url(../assets/fonts/YekanBakh/YekanBakhFaNum-Regular.woff2);
+}
+
+@font-face {
+    font-family: YekanBakh-semi-bold;
+    src: url(../assets/fonts/YekanBakh/YekanBakhFaNum-SemiBold.woff2);
+}
+
+
+@font-face {
+    font-family: YekanBakh-bold;
+    src: url(../assets/fonts/YekanBakh/YekanBakhFaNum-Bold.woff2);
+}
+
+@font-face {
+    font-family: YekanBakh-black;
+    src: url(../assets/fonts/YekanBakh/YekanBakhFaNum-Black.woff2);
+}
+
+@font-face {
+    font-family: YekanBakh-light;
+    src: url(../assets/fonts/YekanBakh/YekanBakhFaNum-Light.woff2);
+}
+
+:root {
+    /* colors */
+    --primary: rgba(44, 126, 248, 1);
+    --primary-hover-light: rgba(7, 92, 217, 1);
+    --on-primary-light: rgba(255, 255, 255, 1);
+    --background-light: rgba(255, 255, 255, 1);
+    --on-background-light: rgba(25, 28, 30, 1);
+    --ultra-light-blue: rgba(235, 243, 254, 1);
+    --surface-light: rgba(255, 255, 255, 1);
+    --neutral-1: rgba(0, 0, 0, 1);
+    --neutral-2: rgba(50, 50, 51, 1);
+    --neutral-2-light: rgba(87, 87, 87, 1);
+    --neutral-3: rgba(100, 100, 102, 1);
+    --neutral-4: rgba(125, 125, 127, 1);
+    --neutral-5: rgba(175, 174, 178, 1);
+    --neutral-6: rgba(200, 199, 203, 1);
+    --neutral-7: rgba(225, 224, 229, 1);
+    --neutral-8: rgb(235, 234, 239);
+    --neutral-9: rgba(245, 246, 248, 1);
+    --neutral-10: rgba(254, 254, 254, 1);
+    --neutral-11: rgba(255, 255, 255, 1);
+    --black-text: rgba(20, 20, 20, 1);
+    --gray-text: rgba(68, 71, 73, 1);
+    --gray-placeholder: rgba(188, 188, 188, 1);
+    --gray-background: rgba(245, 245, 245, 1);
+    --errors: rgba(230, 57, 70, 1);
+    --success: rgba(144, 246, 119, 1); 
+}
+
+html, body {
+    overflow-x: hidden;
+  }
+
+#index {
+    background: linear-gradient(to bottom, #edf5ff 0%, #ffffff 40%, #ffffff 40%, #fcfcfc 50%, #fcfcfc 90%, #ffffff 100%); 
+    color: var(--black-text);
+    height: 100%;
+}
+
+.circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+}
+
+.circle1 {
+    background: 
+        linear-gradient(to bottom, #e5f0ff 0%, transparent 50%),
+        linear-gradient(to bottom right, #e5f0ff 0%, transparent 60%);
+}
+
+.circle2 {
+    background: 
+        linear-gradient(to bottom, #eef1fd 0%, transparent 50%),
+        linear-gradient(to bottom right, #eff1fd 0%, transparent 60%);
+}
+
+.circle3 {
+    background: 
+        linear-gradient(to bottom, #eef1fd 0%, transparent 50%),
+        linear-gradient(to bottom right, #eff1fd 0%, transparent 60%);
+}
+
+.circle4 {
+    background: 
+        linear-gradient(to bottom, #eef1fd 0%, transparent 50%),
+        linear-gradient(to bottom right, #eff1fd 0%, transparent 60%);
+}
+
+
+.circle5 {
+    background: 
+        linear-gradient(to bottom, #eef1fd73 0%, transparent 20%),
+        linear-gradient(to bottom right, #eff1fd65 0%, transparent 40%);
+
+}
+
+
+.circle6 {
+    background: 
+        linear-gradient(to bottom, #eef1fd7a 0%, transparent 20%),
+        linear-gradient(to bottom right, #eff1fd67 0%, transparent 30%);
+}
+
+
+#about-me {
+    background: linear-gradient(to bottom, white 0%, #fcfcfc 20%);
+}
