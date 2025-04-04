@@ -66,13 +66,17 @@
     --black-text: rgba(20, 20, 20, 1);
     --gray-text: rgba(68, 71, 73, 1);
     --gray-placeholder: rgba(188, 188, 188, 1);
-    --gray-background: rgba(245, 245, 245, 1);
+    --gray-background: rgba(249, 250, 251, 1);
     --errors: rgba(230, 57, 70, 1);
     --success: rgba(144, 246, 119, 1); 
 }
 
 html, body {
     overflow-x: hidden;
+  }
+
+  body {
+    font-size: 16px; /* Ensure a base font size */
   }
 
 #index {
@@ -129,4 +133,11 @@ html, body {
 
 #about-me {
     background: linear-gradient(to bottom, white 0%, #fcfcfc 20%);
+}
+
+
+@media (max-width: 768px) {
+    #about-me {
+        background: linear-gradient(to bottom, #f7f9fb 0%, transparent 20%, #f7f9fb 50%);
+    }
 }
