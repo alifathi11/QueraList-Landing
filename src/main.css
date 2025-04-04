@@ -151,3 +151,9 @@ html, body {
 #contact-me {
     background: #fcfcfc;
 }
+
+@media (max-width: 768px) {
+    #contact-me {
+        background: linear-gradient(to bottom, #f7f9fb 0%, transparent 20%, #f7f9fb 50%);
+    }
+}
