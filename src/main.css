@@ -86,6 +86,8 @@
     --on-background-dark: rgba(4, 8, 16, 1);
     --text-white: rgba(230, 230, 230, 1);
     --surface-dark: rgba(230, 233, 239, 1);
+    --border-dark: rgba(41, 50, 66, 1);
+    --placeholder-dark: rgba(109, 117, 129, 1);
 }
 
 html, body {

@@ -578,6 +578,12 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -610,6 +616,15 @@
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-7 {
+    width: calc(var(--spacing) * 7);
+  }
+  .w-8 {
+    width: calc(var(--spacing) * 8);
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
@@ -2763,6 +2778,11 @@
       line-height: 18px;
     }
   }
+  .dark\:block {
+    &:where(.dark, .dark *) {
+      display: block;
+    }
+  }
   .dark\:flex {
     &:where(.dark, .dark *) {
       display: flex;
@@ -2777,6 +2797,16 @@
     &:where(.dark, .dark *) {
       --tw-border-style: none;
       border-style: none;
+    }
+  }
+  .dark\:border-\[var\(--border-dark\)\] {
+    &:where(.dark, .dark *) {
+      border-color: var(--border-dark);
+    }
+  }
+  .dark\:border-l-\[var\(--border-dark\)\] {
+    &:where(.dark, .dark *) {
+      border-left-color: var(--border-dark);
     }
   }
   .dark\:bg-\[var\(--background-dark-2\)\] {
@@ -2799,6 +2829,11 @@
       color: var(--neutral-8);
     }
   }
+  .dark\:text-\[var\(--neutral-9\)\] {
+    &:where(.dark, .dark *) {
+      color: var(--neutral-9);
+    }
+  }
   .dark\:text-\[var\(--text-white\)\] {
     &:where(.dark, .dark *) {
       color: var(--text-white);
@@ -2807,6 +2842,20 @@
   .dark\:text-white {
     &:where(.dark, .dark *) {
       color: var(--color-white);
+    }
+  }
+  .dark\:placeholder\:text-\[var\(--placeholder-dark\)\] {
+    &:where(.dark, .dark *) {
+      &::placeholder {
+        color: var(--placeholder-dark);
+      }
+    }
+  }
+  .dark\:max-md\:inline-block {
+    &:where(.dark, .dark *) {
+      @media (width < 48rem) {
+        display: inline-block;
+      }
     }
   }
 }
@@ -2880,6 +2929,8 @@
   --on-background-dark: rgba(4, 8, 16, 1);
   --text-white: rgba(230, 230, 230, 1);
   --surface-dark: rgba(230, 233, 239, 1);
+  --border-dark: rgba(41, 50, 66, 1);
+  --placeholder-dark: rgba(109, 117, 129, 1);
 }
 html, body {
   overflow-x: hidden;
