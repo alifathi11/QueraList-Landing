@@ -21,18 +21,26 @@
                 <button id="lightDarkButton" class="border-[1.5px] border-[var(--neutral-7)] rounded-lg p-2.5 flex justify-center items-center"><img src="./assets/images/dark-light.svg" alt="light-dark mode"></button>
                 <div id="lightDarkMenu" class="z-20 absolute top-14 w-60 rounded-lg bg-[var(--background-light)] border-1 border-[var(--neutral-7)] 
                 flex flex-col items-start px-6 font-[YekanBakh-regular] text-sm">
-                    <div class="flex flex-row gap-2 items-center justify-start border-b-1 border-b-[var(--neutral-8)] py-5 w-full">
-                        <img src="./assets/images/light-outline.svg" alt="light">
-                        <button>حالت روشن</button>
+                    <div class="border-b-1 border-b-[var(--neutral-8)] py-3 w-full" id="lightModeButton">
+                        <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
+                            <img src="./assets/images/light-outline.svg" alt="light">
+                            <button class="cursor-pointer">حالت روشن</button>
+                            <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="light-on">
+                        </div>
                     </div>
-                    <div class="flex flex-row gap-2 items-center justify-start border-b-1 border-b-[var(--neutral-8)] py-5 w-full">
-                        <img src="./assets/images/dark-outline.svg" alt="dark">
-                        <button>حالت تاریک</button>
+                    <div class="border-b-1 border-b-[var(--neutral-8)] py-3 w-full" id="darkModeButton">
+                        <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
+                            <img src="./assets/images/dark-outline.svg" alt="dark">
+                            <button class="cursor-pointer">حالت تاریک</button>
+                            <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="dark-on">
+                        </div>
                     </div>
-                    <div class="flex flex-row gap-2 items-center justify-start py-5 w-full">
-                        <img src="./assets/images/light-dark (1).svg" alt="light dark">
-                        <button>پیروی از دستگاه</button>
-                        <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto">
+                    <div class="py-3 w-full" id="autoModeButton">
+                        <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
+                            <img src="./assets/images/light-dark (1).svg" alt="light dark">
+                            <button class="cursor-pointer">پیروی از دستگاه</button>
+                            <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="auto-on">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -398,6 +406,33 @@
                     if (!button.contains(event.target) && !menu.contains(event.target)) {
                         menu.classList.add("hidden");
                     }
+                });
+
+                const lightOn = document.getElementById("light-on");
+                const darkOn = document.getElementById("dark-on");
+                const autoOn = document.getElementById("auto-on");
+                lightOn.classList.add("hidden");
+                darkOn.classList.add("hidden");
+
+                const darkModeButton = document.getElementById("darkModeButton");
+                const lightModeButton = document.getElementById("lightModeButton");
+                darkModeButton.addEventListener("click", () => {
+                    document.documentElement.classList.add("dark");
+                    darkOn.classList.remove("hidden");
+                    lightOn.classList.add("hidden");
+                    autoOn.classList.add("hidden");
+                });
+                lightModeButton.addEventListener("click", () => {
+                    document.documentElement.classList.remove("dark");
+                    lightOn.classList.remove("hidden");
+                    darkOn.classList.add("hidden");
+                    autoOn.classList.add("hidden");
+                });
+                autoModeButton.addEventListener("click", () => {
+                    document.documentElement.classList.remove("dark");
+                    autoOn.classList.remove("hidden");
+                    darkOn.classList.add("hidden");
+                    lightOn.classList.add("hidden");
                 });
             });
         </script>

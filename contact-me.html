@@ -7,43 +7,57 @@
         <link href="./src/output.css" rel="stylesheet">
         <title>Contact Me</title>
     </head>
-    <body id="contact-me">
-        <header class="fixed z-10 top-0 right-0 left-0 w-full bg-[var(--background-light)] flex flex-row items-center justify-between px-20 py-6 max-lg:px-10 max-md:justify-center max-sm:py-3">
+    <body id="contact-me" class="bg-[#fcfcfc] mg-md:bg-[linear-gradient(to_bottom,_#f7f9fb_0%,_transparent_20%,_#f7f9fb_50%)] dark:bg-[var(--background-dark-2)]">
+        <header class="fixed z-10 top-0 right-0 left-0 w-full bg-[var(--background-light)] flex flex-row items-center justify-between px-20 py-6 max-lg:px-10 max-md:justify-center max-sm:py-3 dark:bg-[var(--background-dark-2)]">
             <img src="./assets/images/hamburger.svg" alt="hamburger menu" class="hidden absolute right-6 max-md:inline-block">
             <div class="flex flex-row gap-18 items-center font-[YekanBakh-semi-bold] max-lg:gap-5">
-                <h1 class="text-[var(--black-text)] text-xl max-sm:text-lg text-nowrap" style="font-size: clamp(18px, 5vw, 24px);">کوئرا لیست</h1>
-                <a href="./index.html" class="text-[var(--primary)] text-base max-md:hidden">صفحه اصلی</a>
-                <a href="./about-me.html" class="text-[var(--neutral-3)] text-base max-md:hidden">درباره ما</a>
-                <a href="./contact-me.html" class="text-[var(--neutral-3)] text-base max-md:hidden">ارتباط با ما</a>
+                <h1 class="text-[var(--black-text)] text-xl max-sm:text-lg text-nowrap dark:text-white" style="font-size: clamp(18px, 5vw, 24px);">کوئرا لیست</h1>
+                <a href="./index.html" class="text-[var(--neutral-3)] text-base max-md:hidden dark:text-[var(--neutral-8)]">صفحه اصلی</a>
+                <a href="./about-me.html" class="text-[var(--neutral-3)] text-base max-md:hidden dark:text-[var(--neutral-8)]">درباره ما</a>
+                <a href="./contact-me.html" class="text-[var(--primary)] text-base max-md:hidden">ارتباط با ما</a>
             </div>
             <div class="relative flex flex-row gap-5 items-center max-md:hidden">
                 <a href="" target="_blank" class="border-none py-2.5 px-7 font-[YekanBakh-regular] text-base text-[var(--neutral-11)] bg-[var(--primary)] rounded-lg">ورود به اپلیکیشن</a>
-                <button id="lightDarkButton" class="border-[1.5px] border-[var(--neutral-7)] rounded-lg p-2.5 flex justify-center items-center"><img src="./assets/images/dark-light.svg" alt="light-dark mode"></button>
+                    
+                <div>
+                    <button id="lightDarkButton" class="border-[1.5px] border-[var(--neutral-7)] rounded-lg p-2.5 flex justify-center items-center dark:hidden"><img src="./assets/images/dark-light.svg" alt="light-dark mode"></button>
+                    <button id="lightDarkButton" class="border-[1.5px] border-[var(--neutral-2)] rounded-lg p-2.5 hidden justify-center items-center dark:flex"><img src="./assets/images/dark-light-2.svg" alt="light-dark mode"></button>
+                </div>
+                
                 <div id="lightDarkMenu" class="z-20 absolute top-14 w-60 rounded-lg bg-[var(--background-light)] border-1 border-[var(--neutral-7)] 
                 flex flex-col items-start px-6 font-[YekanBakh-regular] text-sm">
-                    <div class="flex flex-row gap-2 items-center justify-start border-b-1 border-b-[var(--neutral-8)] py-5 w-full">
+                <div class="border-b-1 border-b-[var(--neutral-8)] py-3 w-full" id="lightModeButton">
+                    <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
                         <img src="./assets/images/light-outline.svg" alt="light">
-                        <button>حالت روشن</button>
+                        <button class="cursor-pointer">حالت روشن</button>
+                        <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="light-on">
                     </div>
-                    <div class="flex flex-row gap-2 items-center justify-start border-b-1 border-b-[var(--neutral-8)] py-5 w-full">
+                </div>
+                <div class="border-b-1 border-b-[var(--neutral-8)] py-3 w-full" id="darkModeButton">
+                    <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
                         <img src="./assets/images/dark-outline.svg" alt="dark">
-                        <button>حالت تاریک</button>
+                        <button class="cursor-pointer">حالت تاریک</button>
+                        <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="dark-on">
                     </div>
-                    <div class="flex flex-row gap-2 items-center justify-start py-5 w-full">
+                </div>
+                <div class="py-3 w-full" id="autoModeButton">
+                    <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
                         <img src="./assets/images/light-dark (1).svg" alt="light dark">
-                        <button>پیروی از دستگاه</button>
-                        <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto">
+                        <button class="cursor-pointer">پیروی از دستگاه</button>
+                        <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="auto-on">
                     </div>
+                </div>
                 </div>
             </div>
         </header>
 
 
-        <main class="grid grid-cols-2 gap-5 bg-[var(--light-background)] border-1 border-[var(--neutral-8)] rounded-3xl py-10 mt-40 mx-60 max-xl:mx-20 max-sm:hidden">
+        <main class="grid grid-cols-2 gap-5 bg-[var(--light-background)] border-1 border-[var(--neutral-8)] rounded-3xl py-10 mt-40 mx-60 max-xl:mx-20 max-sm:hidden
+        dark:text-[var(--text-white)] dark:bg-[var(--background-dark-light)] dark:border-none">
             <section class="flex flex-col border-l-1 border-l-[var(--neutral-7)]" style="gap: clamp(10px, 2vw + 1rem, 40px);">
                 <div class="flex flex-col gap-2 pr-10 pl-16">
-                    <h1 class="font-[Abar-bold] text-[var(--black-text)] text-nowrap" style="font-size: clamp(20px, 3vw, 40px);">تماس با من</h1>
-                    <p class="font-[Abar-regular] text-[var(--gray-text-2)] leading-loose" style="font-size: clamp(14px, 1.5vw, 20px);">چیزی هست که بخوای ازم بپرسی؟ خوشحال میشم بتونم بهت کمکی کنم.</p>
+                    <h1 class="font-[Abar-bold] text-[var(--black-text)] text-nowrap dark:text-[var(--text-white)]" style="font-size: clamp(20px, 3vw, 40px);">تماس با من</h1>
+                    <p class="font-[Abar-regular] text-[var(--gray-text-2)] leading-loose dark:text-[var(--neutral-7)]" style="font-size: clamp(14px, 1.5vw, 20px);">چیزی هست که بخوای ازم بپرسی؟ خوشحال میشم بتونم بهت کمکی کنم.</p>
                 </div>
                 <div class="flex flex-col items-start pr-10 mr-2" style="gap: clamp(10px, 2vw + 1rem, 40px);">
                     <div class="flex gap-2 items-start">
@@ -160,7 +174,7 @@
         </main>
 
 
-        <div class="flex justify-center">
+        <div class="flex justify-center dark:text-white">
             <div class="w-[min(100vw,640px)] mt-28 px-3 flex flex-row items-center justify-center max-md:mt-24 max-sm:mt-16">
                 <div class="w-full border-t border-[var(--neutral-4)]"></div>
                 <h4 class="font-[YekanBakh-bold] text-xl text-[var(--text-black)] text-nowrap px-4 max-sm:font-[Abar-semi-bold]">کوئرا لیست</h4>
@@ -168,7 +182,7 @@
             </div>
         </div>
 
-        <footer class="w-full flex flex-col items-center gap-10 mt-20 max-md:hidden">
+        <footer class="w-full flex flex-col items-center gap-10 mt-20 max-md:hidden dark:text-white">
             <div class="w-full flex flex-row justify-between px-40 max-lg:px-20">
                 <div class="max-w-[320px] flex flex-col items-start gap-6 font-[YekanBakh-regular] text-sm mr-32 max-2xl:mr-6 max-lg:mr-0">
                     <div class="flex flex-row justify-start items-start gap-4">
@@ -199,7 +213,7 @@
             </div>
         </footer>
 
-        <footer class="w-full hidden mt-10 max-md:block">
+        <footer class="w-full hidden mt-10 max-md:block dark:text-white">
             <div class="w-full grid grid-cols-3 gap-7 max-sm:hidden px-5">
                 <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl py-4 px-7 items-center text-center">
                     <img src="./assets/images/Frame 1000005390.svg" alt="location" class="w-16 h-16">
@@ -281,6 +295,33 @@
                     if (!button.contains(event.target) && !menu.contains(event.target)) {
                         menu.classList.add("hidden");
                     }
+                });
+
+                const lightOn = document.getElementById("light-on");
+                const darkOn = document.getElementById("dark-on");
+                const autoOn = document.getElementById("auto-on");
+                lightOn.classList.add("hidden");
+                darkOn.classList.add("hidden");
+
+                const darkModeButton = document.getElementById("darkModeButton");
+                const lightModeButton = document.getElementById("lightModeButton");
+                darkModeButton.addEventListener("click", () => {
+                    document.documentElement.classList.add("dark");
+                    darkOn.classList.remove("hidden");
+                    lightOn.classList.add("hidden");
+                    autoOn.classList.add("hidden");
+                });
+                lightModeButton.addEventListener("click", () => {
+                    document.documentElement.classList.remove("dark");
+                    lightOn.classList.remove("hidden");
+                    darkOn.classList.add("hidden");
+                    autoOn.classList.add("hidden");
+                });
+                autoModeButton.addEventListener("click", () => {
+                    document.documentElement.classList.remove("dark");
+                    autoOn.classList.remove("hidden");
+                    darkOn.classList.add("hidden");
+                    lightOn.classList.add("hidden");
                 });
             });
         </script>

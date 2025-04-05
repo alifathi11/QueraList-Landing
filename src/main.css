@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 @font-face {
     font-family: Abar-regular;
@@ -48,7 +50,7 @@
 }
 
 :root {
-    /* colors */
+    /* light colors */
     --primary: rgba(44, 126, 248, 1);
     --primary-hover-light: rgba(7, 92, 217, 1);
     --on-primary-light: rgba(255, 255, 255, 1);
@@ -75,15 +77,24 @@
     --gray-background-2: rgba(249, 250, 251, 1);
     --errors: rgba(230, 57, 70, 1);
     --success: rgba(144, 246, 119, 1); 
+
+    /* dark colors */
+    --primary-hover-dark: rgba(107, 164, 250, 1);
+    --background-dark: rgba(255, 255, 255, 1);
+    --background-dark-2: rgba(6,12,24,255);
+    --background-dark-light: rgba(11,25,45,255);
+    --on-background-dark: rgba(4, 8, 16, 1);
+    --text-white: rgba(230, 230, 230, 1);
+    --surface-dark: rgba(230, 233, 239, 1);
 }
 
 html, body {
     overflow-x: hidden;
   }
 
-  body {
-    font-size: 16px; /* Ensure a base font size */
-  }
+body {
+   font-size: 16px; 
+}
 
 #index {
     background: linear-gradient(to bottom, #edf5ff 0%, #ffffff 40%, #ffffff 40%, #fcfcfc 50%, #fcfcfc 90%, #ffffff 100%); 
@@ -144,16 +155,6 @@ html, body {
 
 @media (max-width: 768px) {
     #about-me {
-        background: linear-gradient(to bottom, #f7f9fb 0%, transparent 20%, #f7f9fb 50%);
-    }
-}
-
-#contact-me {
-    background: #fcfcfc;
-}
-
-@media (max-width: 768px) {
-    #contact-me {
         background: linear-gradient(to bottom, #f7f9fb 0%, transparent 20%, #f7f9fb 50%);
     }
 }
