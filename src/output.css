@@ -358,6 +358,9 @@
   .hidden {
     display: none;
   }
+  .table {
+    display: table;
+  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
@@ -375,6 +378,9 @@
   }
   .h-full {
     height: 100%;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -424,8 +430,14 @@
   .max-w-lg {
     max-width: var(--container-lg);
   }
+  .flex-1 {
+    flex: 1;
+  }
   .flex-1\/2 {
     flex: calc(1/2 * 100%);
+  }
+  .border-collapse {
+    border-collapse: collapse;
   }
   .scale-75 {
     --tw-scale-x: 75%;
@@ -438,6 +450,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .resize-none {
     resize: none;
@@ -516,6 +531,10 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .border-1 {
     border-style: var(--tw-border-style);
@@ -701,6 +720,9 @@
   .pr-10 {
     padding-right: calc(var(--spacing) * 10);
   }
+  .pb-1 {
+    padding-bottom: calc(var(--spacing) * 1);
+  }
   .pb-1\.5 {
     padding-bottom: calc(var(--spacing) * 1.5);
   }
@@ -793,6 +815,9 @@
   .text-nowrap {
     text-wrap: nowrap;
   }
+  .text-wrap {
+    text-wrap: wrap;
+  }
   .text-\[YekanBakh-semi-bold\] {
     color: YekanBakh-semi-bold;
   }
@@ -831,6 +856,13 @@
   }
   .not-italic {
     font-style: normal;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -1285,6 +1317,11 @@
       border-color: var(--border-dark-2);
     }
   }
+  .dark\:border-b-\[var\(--border-dark\)\] {
+    &:where(.dark, .dark *) {
+      border-bottom-color: var(--border-dark);
+    }
+  }
   .dark\:border-l-\[var\(--border-dark\)\] {
     &:where(.dark, .dark *) {
       border-left-color: var(--border-dark);
@@ -1359,6 +1396,33 @@
     &:where(.dark, .dark *) {
       &::placeholder {
         color: var(--placeholder-dark);
+      }
+    }
+  }
+  .dark\:hover\:bg-\[var\(--neutral-2\)\] {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--neutral-2);
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-\[var\(--neutral-3\)\] {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--neutral-3);
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-\[var\(--on-background-dark\)\] {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--on-background-dark);
+        }
       }
     }
   }
@@ -1554,6 +1618,11 @@ body {
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -1620,6 +1689,7 @@ body {
       --tw-skew-y: skewY(0);
       --tw-border-style: solid;
       --tw-leading: initial;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
