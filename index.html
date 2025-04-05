@@ -3,57 +3,64 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./src/main.css">
         <link href="./src/output.css" rel="stylesheet">
         <title>Landing</title>
     </head>
-    <body id="index">
-        <header class="fixed z-10 top-0 right-0 left-0 w-full bg-[var(--background-light)] flex flex-row items-center justify-between px-20 py-6 max-lg:px-10 max-md:justify-center max-sm:py-3">
-            <img src="./assets/images/hamburger.svg" alt="hamburger menu" class="hidden absolute right-6 max-md:inline-block">
+    <body id="index" class="bg-[linear-gradient(to_bottom,_#edf5ff_0%,_#ffffff_40%,_#ffffff_40%,_#fcfcfc_50%,_#fcfcfc_90%,_#ffffff_100%)] dark:bg-[linear-gradient(to_bottom,_#061a3a_0%,_#060c18_30%)] dark:text-white">
+        <header class="fixed z-10 top-0 right-0 left-0 w-full bg-[var(--background-light)] flex flex-row items-center justify-between px-20 py-6 max-lg:px-10 max-md:justify-center max-sm:py-3 dark:bg-[var(--background-dark-2)]">
+            <img src="./assets/images/hamburger.svg" alt="hamburger menu" class="hidden absolute right-6 max-md:inline-block dark:hidden">
+            <img src="./assets/images/hamburger-dark.svg" alt="hamburger menu" class="hidden absolute right-6 dark:max-md:inline-block">
             <div class="flex flex-row gap-18 items-center font-[YekanBakh-semi-bold] max-lg:gap-5">
-                <h1 class="text-[var(--black-text)] text-xl max-sm:text-xl" style="font-size: clamp(18px, 5vw, 24px);">کوئرا لیست</h1>
+                <h1 class="text-[var(--black-text)] text-xl max-sm:text-lg text-nowrap dark:text-white" style="font-size: clamp(18px, 5vw, 24px);">کوئرا لیست</h1>
                 <a href="./index.html" class="text-[var(--primary)] text-base max-md:hidden">صفحه اصلی</a>
-                <a href="/about-me.html" class="text-[var(--neutral-3)] text-base max-md:hidden">درباره ما</a>
-                <a href="./contact-me.html" class="text-[var(--neutral-3)] text-base max-md:hidden">ارتباط با ما</a>
+                <a href="./about-me.html" class="text-[var(--neutral-3)] text-base max-md:hidden dark:text-[var(--neutral-8)]">درباره ما</a>
+                <a href="./contact-me.html" class="text-[var(--neutral-3)] text-base max-md:hidden dark:text-[var(--neutral-8)]">ارتباط با ما</a>
             </div>
             <div class="relative flex flex-row gap-5 items-center max-md:hidden">
                 <a href="" target="_blank" class="border-none py-2.5 px-7 font-[YekanBakh-regular] text-base text-[var(--neutral-11)] bg-[var(--primary)] rounded-lg">ورود به اپلیکیشن</a>
-                <button id="lightDarkButton" class="border-[1.5px] border-[var(--neutral-7)] rounded-lg p-2.5 flex justify-center items-center"><img src="./assets/images/dark-light.svg" alt="light-dark mode"></button>
+                    
+                <div>
+                    <button id="lightDarkButton-light" class="border-[1.5px] border-[var(--neutral-7)] rounded-lg p-2.5 flex justify-center items-center dark:hidden cursor-pointer"><img src="./assets/images/dark-light.svg" alt="light-dark mode"></button>
+                    <button id="lightDarkButton-dark" class="border-[1.5px] border-[var(--neutral-2)] rounded-lg p-2.5 hidden justify-center items-center dark:flex cursor-pointer"><img src="./assets/images/dark-light-2.svg" alt="light-dark mode"></button>
+                </div>
+                
                 <div id="lightDarkMenu" class="z-20 absolute top-14 w-60 rounded-lg bg-[var(--background-light)] border-1 border-[var(--neutral-7)] 
                 flex flex-col items-start px-6 font-[YekanBakh-regular] text-sm">
-                    <div class="border-b-1 border-b-[var(--neutral-8)] py-3 w-full" id="lightModeButton">
-                        <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
-                            <img src="./assets/images/light-outline.svg" alt="light">
-                            <button class="cursor-pointer">حالت روشن</button>
-                            <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="light-on">
-                        </div>
+                <div class="border-b-1 border-b-[var(--neutral-8)] py-3 w-full" id="lightModeButton">
+                    <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
+                        <img src="./assets/images/light-outline.svg" alt="light">
+                        <button class="cursor-pointer">حالت روشن</button>
+                        <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="light-on">
                     </div>
-                    <div class="border-b-1 border-b-[var(--neutral-8)] py-3 w-full" id="darkModeButton">
-                        <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
-                            <img src="./assets/images/dark-outline.svg" alt="dark">
-                            <button class="cursor-pointer">حالت تاریک</button>
-                            <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="dark-on">
-                        </div>
+                </div>
+                <div class="border-b-1 border-b-[var(--neutral-8)] py-3 w-full" id="darkModeButton">
+                    <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
+                        <img src="./assets/images/dark-outline.svg" alt="dark">
+                        <button class="cursor-pointer">حالت تاریک</button>
+                        <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="dark-on">
                     </div>
-                    <div class="py-3 w-full" id="autoModeButton">
-                        <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
-                            <img src="./assets/images/light-dark (1).svg" alt="light dark">
-                            <button class="cursor-pointer">پیروی از دستگاه</button>
-                            <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="auto-on">
-                        </div>
+                </div>
+                <div class="py-3 w-full" id="autoModeButton">
+                    <div class="flex flex-row gap-2 items-center justify-start rounded-lg hover:bg-[var(--neutral-9)] p-3 cursor-pointer">
+                        <img src="./assets/images/light-dark (1).svg" alt="light dark">
+                        <button class="cursor-pointer">پیروی از دستگاه</button>
+                        <img src="./assets/images/tick-outline.svg" alt="tick" class="mr-auto" id="auto-on">
                     </div>
+                </div>
                 </div>
             </div>
         </header>
         <main class="flex flex-col items-center w-full mt-60 max-sm:mt-36">
             <section class="w-full">
                 <div class="relative">
-                    <img src="./assets/images/Star 2 (Stroke).svg" alt="Star" class="z-1 absolute top-[-50px] max-sm:hidden" style="right: clamp(15px, 30vw,480px);">
-                    <img src="./assets/images/Star 2 (Stroke).svg" alt="Star" class="z-1 scale-75 hidden absolute top-[-30px] max-sm:block" style="right: clamp(10px, 9vw,100px);">
-                    <div class="circle circle1 z-0 absolute top-[-50px] max-sm:hidden" style="left: clamp(-300px, -10vw, -200px);"></div>
-                    <div class="circle circle2 z-0 absolute top-[90px] max-sm:hidden" style="right: clamp(-200px, -20vw, -40px);"></div>
-                    <div class="circle circle2 hidden z-0 absolute top-[40px] max-sm:block" style="right: clamp(-500px, -50vw, -40px);"></div>
-                    <div class="circle circle2 hidden z-0 absolute top-[-50px] max-sm:block" style="left: clamp(-500px, -80vw, -100px);"></div>
+                    <img src="./assets/images/Star 2 (Stroke).svg" alt="Star" class="z-1 absolute top-[-50px] max-sm:hidden dark:hidden" style="right: clamp(15px, 30vw,480px);">
+                    <img src="./assets/images/Star 2 (Stroke).svg" alt="Star" class="z-1 scale-75 hidden absolute top-[-30px] max-sm:block dark:hidden" style="right: clamp(10px, 9vw,100px);">
+                    <img src="./assets/images/Star 2 (Stroke) (1).svg" alt="Star" class="z-1 hidden absolute top-[-50px] max-sm:hidden dark:block dark:max-sm:hidden" style="right: clamp(15px, 30vw,480px);">
+                    <img src="./assets/images/Star 2 (Stroke) (1).svg" alt="Star" class="z-1 scale-75 hidden absolute top-[-30px] dark:max-sm:block" style="right: clamp(10px, 9vw,100px);">
+                    <div class="circle circle1 z-0 absolute top-[-50px] max-sm:hidden dark:hidden" style="left: clamp(-300px, -10vw, -200px);"></div>
+                    <div class="circle circle2 z-0 absolute top-[90px] max-sm:hidden dark:hidden" style="right: clamp(-200px, -20vw, -40px);"></div>
+                    <div class="circle circle2 hidden z-0 absolute top-[40px] max-sm:block dark:hidden" style="right: clamp(-500px, -50vw, -40px);"></div>
+                    <div class="circle circle2 hidden z-0 absolute top-[-50px] max-sm:block dark:hidden" style="left: clamp(-500px, -80vw, -100px);"></div>
                 </div>
                 <div class="w-full flex flex-col gap-10 text-center items-center">
                     <div class="w-full flex flex-col justify-center items-center gap-8">
@@ -63,6 +70,8 @@
                             <div class="w-full relative">
                                 <img src="./assets/images/Star 2 (Stroke).svg" alt="Star" class="z-1 absolute top-[10px] max-sm:hidden" style="left: clamp(15px, 20vw, 300px);">
                                 <img src="./assets/images/Star 2 (Stroke).svg" alt="Star" class="z-1 scale-75 hidden absolute top-[0px] max-sm:block" style="left: clamp(20px, 10vw, 100px);">
+                                <img src="./assets/images/Star 2 (Stroke) (1).svg" alt="Star" class="z-1 hidden absolute top-[10px] dark:block max-sm:hidden dark:max-sm:hidden" style="left: clamp(15px, 20vw, 300px);">
+                                <img src="./assets/images/Star 2 (Stroke) (1).svg" alt="Star" class="z-1 scale-75 hidden absolute top-[0px] dark:max-sm:block" style="left: clamp(20px, 10vw, 100px);">
                             </div>
                         </div>
                         <img class="w-xs z-1 max-sm:rotate-2 max-sm:hidden" style="width: clamp(20px, 20vw, 320px);" src="./assets/images/Vector 74.svg" alt="vector">
@@ -71,45 +80,54 @@
                     <p class="z-1 text-[YekanBakh-semi-bold] max-w-3xl max-md:p-10 max-sm:p-2 max-md:text-wrap" style="font-size: clamp(12px, 2vw, 20px);">زمان در یک روز برای ما محدود است، اما مهمترین کار این است که چگونه از آن استفاده می‌کنیم. با اپلیکیشن کوییرا لیست، زمان خود را با هدف و برنامه‌ریزی موثر سپری کنید.</p>
                     <div class="flex flex-row gap-5 items-center justify-center">
                         <a href="" class="z-1 border-none bg-[var(--primary)] rounded-lg px-10 py-2.5 text-[var(--neutral-11)] font-[YekanBakh-regular] text-base max-sm:text-xs max-sm:px-7 max-sm:py-3.5">ورود به اپلیکیشن</a>
-                        <a href="" class="z-1 border-none bg-[var(--ultra-light-blue)] rounded-lg px-15 py-2.5 text-[var(--primary)] font-[YekanBakh-regular] text-base max-sm:text-xs max-sm:px-10 max-sm:py-3.5">درباره ما</a>
+                        <a href="" class="z-1 border-none bg-[var(--ultra-light-blue)] rounded-lg px-15 py-2.5 text-[var(--primary)] font-[YekanBakh-regular] text-base max-sm:text-xs max-sm:px-10 max-sm:py-3.5 dark:bg-[var(--button-background-dark)] dark:text-white">درباره ما</a>
                     </div>
                 </div>
             </section>
             <section class="w-full flex flex-col gap-5 mt-14 items-center relative">
-                <div class="circle circle5 z-0 absolute top-[800px]  right-[-200px] "></div>
-                <div class="circle circle6 z-0 absolute top-[1100px] left-[-120px]"></div>
-                <img src="./assets/images/sample.svg" alt="sample image" class="z-1">
+                <div class="circle circle5 z-0 absolute top-[800px]  right-[-200px] dark:hidden"></div>
+                <div class="circle circle6 z-0 absolute top-[1100px] left-[-120px] dark:hidden"></div>
+                <img src="./assets/images/sample.svg" alt="sample image" class="z-1 dark:hidden">
+                <img src="./assets/images/image 39169.svg" alt="sample image" class="z-1 hidden dark:block">
                 <div class="flex flex-col mt-24 items-center gap-7 text-center max-sm:mt-8">
                     <h3 class="font-[Abar-semi-bold]" style="font-size: clamp(20px, 5vw, 40px);">ویژگی های اپلیکیشن کوئرالیست</h3>
-                    <p class="font-[YekanBakh-regular] max-w-[34rem] max-sm:p-2 leading-relaxed" style="font-size: clamp(12px, 2vw, 18px);">ما توی تیم کوئرا لیست بر اساس بازخوردهای شما و جدیدترین ترندهای بازار همواره در تلاشیم تا بهترین تجربه کاربری رو براتون به ارمغان بیاریم.</p>
+                    <p class="font-[YekanBakh-regular] max-w-[34rem] max-sm:p-2 leading-relaxed dark:text-[var(--text-white)]" style="font-size: clamp(12px, 2vw, 18px);">ما توی تیم کوئرا لیست بر اساس بازخوردهای شما و جدیدترین ترندهای بازار همواره در تلاشیم تا بهترین تجربه کاربری رو براتون به ارمغان بیاریم.</p>
                 </div>
                 <div class="w-fit grid grid-cols-4 justify-center items-center mt-8 z-1 max-lg:grid-cols-2 max-sm:px-2" style="gap: clamp(7px, 2vw ,30px);">
-                    <div class="z-1 flex flex-col gap-6 text-center items-center border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl p-7 max-w-[16.5rem] max-sm:gap-1.5 max-sm:py-4 max-sm:px-3">
-                        <img src="./assets/images/Frame 427321293 (7).svg" alt="frame" class="w-12">
+                    <div class="z-1 flex flex-col gap-6 text-center items-center border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl p-7 max-w-[16.5rem] max-sm:gap-1.5 max-sm:py-4 max-sm:px-3
+                    dark:border-none dark:bg-[var(--background-dark-light)]">
+                        <img src="./assets/images/Frame 427321293 (7).svg" alt="frame" class="w-12 dark:hidden">
+                        <img src="./assets/images/dark-UI.svg" alt="frame" class="w-12 hidden dark:block">
                         <div class="flex flex-col gap-4 max-sm:gap-2">
                             <h4 class="font-[Abar-bold] text-nowrap" style="font-size: clamp(14px, 3vw, 20px);">رابط کاربری جذاب</h4>
-                            <p class="font-[YekanBakh-regular] text-sm text-[var(--gray-text)] leading-loose max-sm:leading-[18px] text-nowrap" style="font-size: clamp(8px, 3vw, 14px);">اگه از سردرگمی و بی برنامگی<br> خسته شدی این اپلیکیشن <br>مخصوص خودته!</p>
+                            <p class="font-[YekanBakh-regular] text-sm text-[var(--gray-text)] leading-loose max-sm:leading-[18px] text-nowrap dark:text-[var(--text-white-2)]" style="font-size: clamp(8px, 3vw, 14px);">اگه از سردرگمی و بی برنامگی<br> خسته شدی این اپلیکیشن <br>مخصوص خودته!</p>
                         </div>
-                        </div>
-                    <div class="z-1 flex flex-col gap-6 text-center items-center border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl p-7 max-w-[16.5rem] max-sm:gap-1.5 max-sm:py-4 max-sm:px-3">
-                        <img src="./assets/images/frame2.svg" alt="frame" class="w-12">
+                    </div>
+                    <div class="z-1 flex flex-col gap-6 text-center items-center border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl p-7 max-w-[16.5rem] max-sm:gap-1.5 max-sm:py-4 max-sm:px-3
+                    dark:border-none dark:bg-[var(--background-dark-light)]">
+                        <img src="./assets/images/frame2.svg" alt="frame" class="w-12 dark:hidden">
+                        <img src="./assets/images/dark-cat.svg" alt="frame" class="w-12 hidden dark:block">
                         <div class="flex flex-col gap-4 max-sm:gap-2">
                             <h4 class="font-[Abar-bold] text-nowrap" style="font-size: clamp(12px, 3vw, 20px);">قابلیت دسته‌بندی کارها</h4>
-                            <p class="font-[YekanBakh-regular] text-sm text-[var(--gray-text)] leading-loose max-sm:leading-[18px] text-nowrap" style="font-size: clamp(8px, 3vw, 14px);">اگه از سردرگمی و بی برنامگی <br>خسته شدی این اپلیکیشن <br>مخصوص خودته!</p>
+                            <p class="font-[YekanBakh-regular] text-sm text-[var(--gray-text)] leading-loose max-sm:leading-[18px] text-nowrap dark:text-[var(--text-white-2)]" style="font-size: clamp(8px, 3vw, 14px);">اگه از سردرگمی و بی برنامگی <br>خسته شدی این اپلیکیشن <br>مخصوص خودته!</p>
                         </div>
                     </div>
-                    <div class="z-1 flex flex-col gap-6 text-center items-center border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl p-7 max-w-[16.5rem] max-sm:gap-1.5 max-sm:py-4 max-sm:px-3">
-                        <img src="./assets/images/frame3.svg" alt="frame" class="w-12">
+                    <div class="z-1 flex flex-col gap-6 text-center items-center border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl p-7 max-w-[16.5rem] max-sm:gap-1.5 max-sm:py-4 max-sm:px-3
+                    dark:border-none dark:bg-[var(--background-dark-light)]">
+                        <img src="./assets/images/frame3.svg" alt="frame" class="w-12 dark:hidden">
+                        <img src="./assets/images/dark-access.svg" alt="frame" class="w-12 hidden dark:block">
                         <div class="flex flex-col gap-4 max-sm:gap-2">
                             <h4 class="font-[Abar-bold] text-nowrap" style="font-size: clamp(14px, 3vw, 20px);">دسترسی آسان</h4>
-                            <p class="font-[YekanBakh-regular] text-sm text-[var(--gray-text)] leading-loose max-sm:leading-[18px] text-nowrap" style="font-size: clamp(8px, 3vw, 14px);">اگه از سردرگمی و بی برنامگی<br> خسته شدی این اپلیکیشن <br>مخصوص خودته!</p>
+                            <p class="font-[YekanBakh-regular] text-sm text-[var(--gray-text)] leading-loose max-sm:leading-[18px] text-nowrap dark:text-[var(--text-white-2)]" style="font-size: clamp(8px, 3vw, 14px);">اگه از سردرگمی و بی برنامگی<br> خسته شدی این اپلیکیشن <br>مخصوص خودته!</p>
                         </div>
                     </div>
-                    <div class="z-1 flex flex-col gap-6 text-center items-center border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl p-7 max-w-[16.5rem] max-sm:gap-1.5 max-sm:py-4 max-sm:px-3">
-                        <img src="./assets/images/frame4.svg" alt="frame" class="w-12">
+                    <div class="z-1 flex flex-col gap-6 text-center items-center border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl p-7 max-w-[16.5rem] max-sm:gap-1.5 max-sm:py-4 max-sm:px-3
+                    dark:border-none dark:bg-[var(--background-dark-light)]">
+                        <img src="./assets/images/frame4.svg" alt="frame" class="w-12 dark:hidden">
+                        <img src="./assets/images/dark-support.svg" alt="frame" class="w-12 hidden dark:block">
                         <div class="flex flex-col gap-4 max-sm:gap-2">
                             <h4 class="font-[Abar-bold] text-nowrap" style="font-size: clamp(14px, 3vw, 20px);">پشتیبانی آنلاین</h4>
-                            <p class="font-[YekanBakh-regular] text-sm text-[var(--gray-text)] leading-loose max-sm:leading-[18px] text-nowrap" style="font-size: clamp(8px, 3vw, 14px);">اگه از سردرگمی و بی برنامگی <br>خسته شدی این اپلیکیشن <br>مخصوص خودته!</p>
+                            <p class="font-[YekanBakh-regular] text-sm text-[var(--gray-text)] leading-loose max-sm:leading-[18px] text-nowrap dark:text-[var(--text-white-2)]" style="font-size: clamp(8px, 3vw, 14px);">اگه از سردرگمی و بی برنامگی <br>خسته شدی این اپلیکیشن <br>مخصوص خودته!</p>
                         </div>
                     </div>
                 </div>
@@ -118,13 +136,14 @@
             max-lg:flex-col max-lg:items-center max-sm:py-16 max-sm:px-0 max-sm:mt-0">
                 <div class="flex-1/2 px-10 flex flex-col gap-7 max-md:text-center max-md:px-0 max-sm:gap-2">
                     <div class="flex flex-col gap-3">
-                        <p class="font-[YekanBakh-regular] text-[var(--gray-text)]" style="font-size: clamp(10px, 3vw, 18px);">اپلیکیشن اندروید و IOS</p>
-                        <h3 class="font-[Abar-bold] text-[var(--black-text)]" style="font-size: clamp(20px, 5vw, 40px);">دانلود اپلیکیشن</h3>
+                        <p class="font-[YekanBakh-regular] text-[var(--gray-text)] dark:text-white" style="font-size: clamp(10px, 3vw, 18px);">اپلیکیشن اندروید و IOS</p>
+                        <h3 class="font-[Abar-bold] text-[var(--black-text)] dark:text-white" style="font-size: clamp(20px, 5vw, 40px);">دانلود اپلیکیشن</h3>
                     </div>
                     <div class="mx-auto pb-2">
-                        <img src="./assets/images/Mobile_clay_mockup.svg" alt="mobile" class="hidden mt-5 max-md:block" style="width: clamp(100px, 55vw,1000px);">
+                        <img src="./assets/images/Mobile_clay_mockup.svg" alt="mobile" class="hidden mt-5 max-md:block dark:max-md:hidden" style="width: clamp(100px, 55vw,1000px);">
+                        <img src="./assets/images/Mobile_clay_mockup (1).svg" alt="mobile" class="hidden mt-5 dark:max-md:block" style="width: clamp(100px, 55vw,1000px);">
                     </div>
-                    <p class="font-[YekanBakh-regular] text-[var(--gray-text)]" style="font-size: clamp(10px, 3vw, 18px);">کاربران اندروید می‌توانند اپلیکیشن کوئرالیست را از استورهای معتبر اندروید دانلود نمایند. همچنین کاربران سیستم عامل اپل علاوه بر دانلود نرم‌افزار از اپل‌استور می‌توانند از نسخه مبتنی بر وب آن استفاده نمایند.
+                    <p class="font-[YekanBakh-regular] text-[var(--gray-text)] dark:text-[var(--text-white)]" style="font-size: clamp(10px, 3vw, 18px);">کاربران اندروید می‌توانند اپلیکیشن کوئرالیست را از استورهای معتبر اندروید دانلود نمایند. همچنین کاربران سیستم عامل اپل علاوه بر دانلود نرم‌افزار از اپل‌استور می‌توانند از نسخه مبتنی بر وب آن استفاده نمایند.
                         <br>همچنین کاربران سیستم عامل اپل علاوه بر دانلود نرم‌افزار از اپل‌استور می‌توانند از نسخه مبتنی بر وب آن استفاده نمایند.</p>
                     <div class="flex flex-row gap-3 mt-5 max-md:justify-center">  
                         <a href="" class="font-[YekanBakh-bold] text-lg text-[var(--primary)]" style="font-size: clamp(12px, 4vw, 18px);">ورود به اپلیکیشن</a>
@@ -132,92 +151,93 @@
                     </div>   
                 </div>
                 <div class="flex-1/2">
-                    <img src="./assets/images/sample2.svg" alt="laptop mobile" class="max-md:hidden">
+                    <img src="./assets/images/sample2.svg" alt="laptop mobile" class="max-md:hidden dark:hidden">
+                    <img src="./assets/images/mobile-laptop-dark.svg" alt="laptop mobile" class="hidden dark:block dark:max-md:hidden">
                 </div>
             </section>
             <section class="relative w-full flex flex-col items-center gap-10 mt-32 max-2xl:mt-24 max-sm:mt-0">
-                <div class="circle circle3 absolute top-[-50px] left-[-150px] z-0 max-lg:hidden"></div>
-                <div class="circle circle4 absolute top-[520px] right-[-40px] z-0 max-lg:hidden"></div>
+                <div class="circle circle3 absolute top-[-50px] left-[-150px] z-0 max-lg:hidden dark:hidden"></div>
+                <div class="circle circle4 absolute top-[520px] right-[-40px] z-0 max-lg:hidden dark:hidden"></div>
                 <div class="flex flex-col gap-5 items-center text-center max-w-lg">
-                    <h3 class="font-[Abar-bold] text-[var(--black-text)]" style="font-size: clamp(20px, 7vw, 40px);">نظرات کاربران</h3>
-                    <p class="font-[YekanBakh-regular] text-[var(--gray-text)] px-3" style="font-size: clamp(10px, 3vw, 18px);">بیش از یک دهه است که کوئرا لیست به مردم در سراسر جهان کمک می‌کند تا سازماندهی شوند و به اهداف خود برسند.</p>
+                    <h3 class="font-[Abar-bold] text-[var(--black-text)] dark:text-white" style="font-size: clamp(20px, 7vw, 40px);">نظرات کاربران</h3>
+                    <p class="font-[YekanBakh-regular] text-[var(--gray-text)] px-3 dark:text-[var(--text-white)]" style="font-size: clamp(10px, 3vw, 18px);">بیش از یک دهه است که کوئرا لیست به مردم در سراسر جهان کمک می‌کند تا سازماندهی شوند و به اهداف خود برسند.</p>
                 </div>
                 <div class="container z-1 grid grid-cols-3 gap-5 mt-5 px-52 max-2xl:mt-1 max-2xl:px-24 max-2xl:py-0 max-lg:hidden">
                     <div class="flex flex-col gap-6"> 
-                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl">
+                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl dark:border-none dark:bg-[var(--background-dark-light)]">
                             <div class="flex flex-row items-center gap-5">
                                 <img src="./assets/images/Ellipse 135.svg" alt="avatar">
                                 <div class="flex flex-col gap-2">
-                                    <p class="font-[Abar-bold] text-sm text-[15px]">رویا ملکی</p>
-                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                    <p class="font-[Abar-bold] text-sm text-[15px] dark:text-white">رویا ملکی</p>
+                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                                 </div>
                             </div>
                             <div>
-                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
+                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] dark:text-[var(--text-white)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
                             </div>
                         </div>
-                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl">
+                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 border-1 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl dark:border-[var(--border-dark-2)] dark:bg-[var(--background-dark-light)]">
                             <div class="flex flex-row items-center gap-5">
                                 <img src="./assets/images/Ellipse 136.svg" alt="avatar">
                                 <div class="flex flex-col gap-2">
-                                    <p class="font-[Abar-bold] text-sm text-[15px]">رویا ملکی</p>
-                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                    <p class="font-[Abar-bold] text-sm text-[15px] dark:text-white">رویا ملکی</p>
+                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                                 </div>
                             </div>
                             <div>
-                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سریع تر باشیم</p>
+                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] dark:text-[var(--text-white)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سریع تر باشیم</p>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col gap-6">
-                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl">
+                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 border-1 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl dark:border-[var(--border-dark-2)] dark:bg-[var(--background-dark-light)]">
                             <div class="flex flex-row items-center gap-5">
                                 <img src="./assets/images/Ellipse 136 (1).svg" alt="avatar">
                                 <div class="flex flex-col gap-2">
-                                    <p class="font-[Abar-bold] text-sm text-[15px]">رویا ملکی</p>
-                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                    <p class="font-[Abar-bold] text-sm text-[15px] dark:text-white">رویا ملکی</p>
+                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                                 </div>
                             </div>
                             <div>
-                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سریع تر باشیم</p>
+                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] dark:text-[var(--text-white)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سریع تر باشیم</p>
                             </div>
                         </div>
-                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl">
+                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl dark:border-none dark:bg-[var(--background-dark-light)]">
                             <div class="flex flex-row items-center gap-5">
                                 <img src="./assets/images/Ellipse 135 (1).svg" alt="avatar">
                                 <div class="flex flex-col gap-2">
-                                    <p class="font-[Abar-bold] text-sm text-[15px]">رویا ملکی</p>
-                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                    <p class="font-[Abar-bold] text-sm text-[15px] dark:text-white">رویا ملکی</p>
+                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                                 </div>
                             </div>
                             <div>
-                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
+                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] dark:text-[var(--text-white)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col gap-6">
-                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl">
+                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl dark:border-none dark:bg-[var(--background-dark-light)]">
                             <div class="flex flex-row items-center gap-5">
                                 <img src="./assets/images/Ellipse 135 (2).svg" alt="avatar">
                                 <div class="flex flex-col gap-2">
-                                    <p class="font-[Abar-bold] text-sm text-[15px]">رویا ملکی</p>
-                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                    <p class="font-[Abar-bold] text-sm text-[15px] dark:text-white">رویا ملکی</p>
+                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                                 </div>
                             </div>
                             <div>
-                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
+                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] dark:text-[var(--text-white)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
                             </div>
                         </div>
-                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 border-2 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl">
+                        <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 border-1 bg-[var(--background-light)] border-[var(--neutral-9)] rounded-3xl dark:border-[var(--border-dark-2)] dark:bg-[var(--background-dark-light)]">
                             <div class="flex flex-row items-center gap-5">
                                 <img src="./assets/images/Ellipse 136 (2).svg" alt="avatar">
                                 <div class="flex flex-col gap-2">
-                                    <p class="font-[Abar-bold] text-sm text-[15px]">رویا ملکی</p>
-                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                    <p class="font-[Abar-bold] text-sm text-[15px] dark:text-white">رویا ملکی</p>
+                                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                                 </div>
                             </div>
                             <div>
-                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سریع تر باشیم</p>
+                                <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] dark:text-[var(--text-white)]">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سریع تر باشیم</p>
                             </div>
                         </div>
                     </div>
@@ -226,215 +246,188 @@
                 <div class="hidden max-lg:flex max-lg:flex-row max-lg:items-center max-lg:justify-center max-lg:gap-7
                 max-md:gap-5">
                     <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl mr-[-300px]
-                    max-md:overflow-y-auto max-md:max-h-96 max-sm:py-5 max-sm:gap-4">
+                    max-md:overflow-y-auto max-md:max-h-96 max-sm:py-5 max-sm:gap-4 dark:border-none dark:bg-[var(--background-dark-light)]">
                         <div class="flex flex-row items-center gap-5">
                             <img src="./assets/images/Ellipse 135.svg" alt="avatar">
                             <div class="flex flex-col gap-3 justify-center">
-                                <p class="font-[Abar-bold] text-sm">علی ملکی</p>
-                                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                <p class="font-[Abar-bold] text-sm dark:text-white">علی ملکی</p>
+                                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                             </div>
                         </div>
                         <div>
-                            <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] max-sm:text-xs leading-5 p-2" style="font-size: clamp(12px, 2vw, 16px);">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
+                            <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] max-sm:text-xs leading-5 p-2 dark:text-[var(--text-white)]" style="font-size: clamp(12px, 2vw, 16px);">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
                         </div>
                     </div>
                     <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl max-md:hidden
-                    max-md:overflow-y-auto max-md:max-h-96 max-sm:py-5 max-sm:gap-4">
+                    max-md:overflow-y-auto max-md:max-h-96 max-sm:py-5 max-sm:gap-4 dark:border-none dark:bg-[var(--background-dark-light)]">
                         <div class="flex flex-row items-center gap-5">
                             <img src="./assets/images/Ellipse 136.svg" alt="avatar">
                             <div class="flex flex-col gap-3 justify-center">
-                                <p class="font-[Abar-bold] text-sm">علی ملکی</p>
-                                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                <p class="font-[Abar-bold] text-sm dark:text-white">علی ملکی</p>
+                                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                             </div>
                         </div>
                         <div>
-                            <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] max-sm:text-xs leading-5 p-2" style="font-size: clamp(12px, 2vw, 16px);">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
+                            <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] max-sm:text-xs leading-5 p-2 dark:text-[var(--text-white)]" style="font-size: clamp(12px, 2vw, 16px);">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
                         </div>
                     </div>
 
                     <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl
-                    max-md:overflow-y-auto max-md:max-h-96 max-sm:py-5 max-sm:gap-4">
+                    max-md:overflow-y-auto max-md:max-h-96 max-sm:py-5 max-sm:gap-4 dark:border-none dark:bg-[var(--background-dark-light)]">
                         <div class="flex flex-row items-center gap-3">
                             <img src="./assets/images/Ellipse 135 (1).svg" alt="avatar">
                             <div class="flex flex-col gap-3 justify-center">
-                                <p class="font-[Abar-bold] text-sm">علی ملکی</p>
-                                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                <p class="font-[Abar-bold] text-sm dark:text-white">علی ملکی</p>
+                                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                             </div>
                         </div>
                         <div>
-                            <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] max-sm:text-xs leading-5 p-2" style="font-size: clamp(12px, 2vw, 16px);">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
+                            <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] max-sm:text-xs leading-5 p-2 dark:text-[var(--text-white)]" style="font-size: clamp(12px, 2vw, 16px);">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
                         </div>
                     </div>
 
                     <div class="h-fit w-full max-w-[360px] flex flex-col gap-5 items-start p-8 bg-[var(--background-light)] rounded-3xl ml-[-300px]
-                    max-md:overflow-y-auto max-md:max-h-96 max-sm:py-5 max-sm:gap-4">
+                    max-md:overflow-y-auto max-md:max-h-96 max-sm:py-5 max-sm:gap-4 dark:border-none dark:bg-[var(--background-dark-light)]">
                         <div class="flex flex-row items-center gap-5">
                             <img src="./assets/images/Ellipse 136 (1).svg" alt="avatar">
                             <div class="flex flex-col gap-3 justify-center">
-                                <p class="font-[Abar-bold] text-sm">علی ملکی</p>
-                                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)]">مهندس نرم‌افزار دیجی‌کالا</p>
+                                <p class="font-[Abar-bold] text-sm dark:text-white">علی ملکی</p>
+                                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)] dark:text-[var(--text-white)]">مهندس نرم‌افزار دیجی‌کالا</p>
                             </div>
                         </div>
                         <div>
-                            <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] max-sm:text-xs leading-5 p-2" style="font-size: clamp(12px, 2vw, 16px);">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
+                            <p class="font-[YekanBakh-light] text-base text-[var(--neutral-3)] max-sm:text-xs leading-5 p-2 dark:text-[var(--text-white)]" style="font-size: clamp(12px, 2vw, 16px);">تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-row gap-6 mt-5 justify-center max-2xl:mt-3 max-md:mt-2 max-sm:mt-0">
-                    <button class="p-2 border-1 border-[var(--neutral-8)] rounded-lg"><img src="./assets/images/arrow-right-outline.svg" alt="arrow right"></button>
-                    <button class="p-2 border-1 border-[var(--neutral-8)] rounded-lg"><img src="./assets/images/arrow-left-outline.svg" alt="arrow left"></button>
+                    <button class="p-2 border-1 border-[var(--neutral-8)] rounded-lg dark:hidden"><img src="./assets/images/arrow-right-outline.svg" alt="arrow right"></button>
+                    <button class="p-2 border-1 border-[var(--neutral-6)] bg-[var(--background-dark-light)] dark:border-[var(--border-dark-2)] rounded-lg hidden dark:block"><img src="./assets/images/right-dark.svg" alt="arrow right"></button>
+                    <button class="p-2 border-1 border-[var(--neutral-8)] rounded-lg dark:hidden"><img src="./assets/images/arrow-left-outline.svg" alt="arrow left"></button>
+                    <button class="p-2 border-1 border-[var(--neutral-6)] bg-[var(--background-dark-light)] dark:border-[var(--border-dark-2)] rounded-lg hidden dark:block"><img src="./assets/images/left-dark.svg" alt="arrow left"></button>
                 </div>
 
             </section>
-            <div class="w-[min(100vw,640px)] mt-32 px-3 flex flex-row items-center justify-center max-md:mt-24 max-sm:mt-16">
+        </main>
+        
+        <div class="flex justify-center dark:text-white">
+            <div class="w-[min(100vw,640px)] mt-28 px-3 flex flex-row items-center justify-center max-md:mt-24 max-sm:mt-16">
                 <div class="w-full border-t border-[var(--neutral-4)]"></div>
                 <h4 class="font-[YekanBakh-bold] text-xl text-[var(--text-black)] text-nowrap px-4 max-sm:font-[Abar-semi-bold]">کوئرا لیست</h4>
                 <div class="w-full border-t border-[var(--neutral-4)]"></div>
             </div>
-            <footer class="w-full flex flex-col items-center gap-10 mt-10 max-md:hidden">
-                <div class="w-full flex flex-row justify-between px-40 max-lg:px-20">
-                    <div class="max-w-[320px] flex flex-col items-start gap-6 font-[YekanBakh-regular] text-sm mr-32 max-2xl:mr-6 max-lg:mr-0">
-                        <div class="flex flex-row justify-start items-start gap-4">
-                            <img src="./assets/images/fax.svg" alt="fax">
-                            <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-                        </div>
-                        <div class="flex flex-row justify-start items-start gap-4">
-                            <img src="./assets/images/call.svg" alt="call">
-                            <p>تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-                        </div>
-                        <div class="flex flex-row justify-start items-start gap-4">
-                            <img src="./assets/images/location.svg" alt="location">
-                            <address class="not-italic">آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</address>
-                        </div>
-                    </div>
-                    <div class="max-w-[320px] flex flex-col gap-3 text-base ml-36 max-2xl:ml-6 max-lg:ml-0">
-                        <strong class="font-[YekanBakh-bold]">با ما در ارتباط باش</strong>
-                        <p class="font-[YekanBakh-regular]">اگه میخوای اولین نفری باشی که از فیچرهای جدید 
-                            و تخفیفات با خبر بشی.</p>
-                        <div class="w-full flex flex-row justify-start border-1 border-[var(--neutral-5)] rounded-lg pr-7 pl-1 py-1 mt-3">
-                            <input type="text" name="" id="" placeholder="ایمیل" class="pb-1.5 border-none focus:outline-none placeholder:font-[YekanBakh-semi-bold] text-sm text-[var(--gray-placeholder)]">
-                            <button class="mr-auto border-none bg-[var(--primary)] rounded-lg text-[var(--neutral-11)] px-4 py-2 font-[YekanBakh-semi-bold] text-sm">ارسال</button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] mt-7 mb-5">تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.</p>
-                </div>
-            </footer>
+        </div>
 
-            <footer class="w-full hidden mt-10 max-md:block">
-                <div class="w-full grid grid-cols-3 gap-7 max-sm:hidden px-5">
-                    <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl py-4 px-7 items-center text-center">
-                        <img src="./assets/images/Frame 1000005390.svg" alt="location" class="w-16 h-16">
+        <footer class="w-full flex flex-col items-center gap-10 mt-20 max-md:hidden dark:text-white">
+            <div class="w-full flex flex-row justify-between px-40 max-lg:px-20">
+                <div class="max-w-[320px] flex flex-col items-start gap-6 font-[YekanBakh-regular] text-sm mr-32 max-2xl:mr-6 max-lg:mr-0">
+                    <div class="flex flex-row justify-start items-start gap-4">
+                        <img src="./assets/images/fax.svg" alt="fax" class="dark:hidden">
+                        <img src="./assets/images/fluent_fax-20-filled.svg" alt="fax" class="hidden w-5 h-5 dark:block">
+                        <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+                    </div>
+                    <div class="flex flex-row justify-start items-start gap-4">
+                        <img src="./assets/images/call.svg" alt="call" class="dark:hidden">
+                        <img src="./assets/images/call-dark-2.svg" alt="call" class="hidden  w-5 h-5 dark:block">
+                        <p>تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+                    </div>
+                    <div class="flex flex-row justify-start items-start gap-4">
+                        <img src="./assets/images/location.svg" alt="location" class="dark:hidden">
+                        <img src="./assets/images/location-dark.svg" alt="location" class="hidden  w-5 h-5 dark:block">
+                        <address class="not-italic">آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</address>
+                    </div>
+                </div>
+                <div class="max-w-[320px] flex flex-col gap-3 text-base ml-36 max-2xl:ml-6 max-lg:ml-0">
+                    <strong class="font-[YekanBakh-bold]">با ما در ارتباط باش</strong>
+                    <p class="font-[YekanBakh-regular]">اگه میخوای اولین نفری باشی که از فیچرهای جدید 
+                        و تخفیفات با خبر بشی.</p>
+                    <div class="w-full flex flex-row justify-start border-1 border-[var(--neutral-5)] rounded-lg pr-7 pl-1 py-1 mt-3">
+                        <input type="text" name="" id="" placeholder="ایمیل" class="pb-1.5 border-none focus:outline-none placeholder:font-[YekanBakh-semi-bold] text-sm text-[var(--gray-placeholder)]">
+                        <button class="mr-auto border-none bg-[var(--primary)] rounded-lg text-[var(--neutral-11)] px-4 py-2 font-[YekanBakh-semi-bold] text-sm">ارسال</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] mt-7 mb-5 dark:text-white">تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.</p>
+            </div>
+        </footer>
+
+        <footer class="w-full hidden mt-10 max-md:flex flex-col items-center gap-5 dark:text-white">
+            <div class="w-full flex flex-col justify-center gap-3 items-center text-center max-sm:hidden">
+                <strong class="px-3 font-[YekanBakh-bold] text-sm">با ما در ارتباط باش</strong>
+                <p class="text-xs font-[YekanBakh-regular] px-3 text-[var(--neutral-2)] dark:text-white">اگه میخوای اولین نفری باشی که از فیچرهای جدید  و تخفیفات با خبر بشی.</p>
+            </div>
+            <div class="flex flex-row justify-center border-1 border-[var(--neutral-5)] rounded-lg pr-7 pl-1 py-1 w-1/2 max-sm:hidden">
+                <input type="text" name="" id="" placeholder="ایمیل" class="pb-1.5 border-none focus:outline-none placeholder:font-[YekanBakh-semi-bold] text-sm text-[var(--gray-placeholder)]">
+                <button class="mr-auto border-none bg-[var(--primary)] rounded-lg text-[var(--neutral-11)] px-4 py-2 font-[YekanBakh-semi-bold]">ارسال</button>
+            </div>
+            <div class="w-full grid grid-cols-3 gap-7 max-sm:hidden px-5 mt-5">
+                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl py-4 px-7 items-center text-center dark:border-none dark:bg-[var(--background-dark-footer)]">
+                    <img src="./assets/images/Frame 1000005390.svg" alt="location" class="w-16 h-16 dark:hidden">
+                    <img src="./assets/images/location-dark-sm.svg" alt="location" class="hidden w-16 h-16 dark:block">
+                    <address class="not-italic" class="px-2">آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</address>
+                </div>
+                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center dark:border-none dark:bg-[var(--background-dark-footer)]">
+                    <img src="./assets/images/Frame 1000005390 (1).svg" alt="telephone" class="w-16 h-16 dark:hidden">
+                    <img src="./assets/images/tel-dark-sm-footer.svg" alt="telephone" class="hidden w-16 h-16 dark:block">
+                    <div class="flex flex-col gap-1 items-center justify-center">
+                        <p>تلفن پشتیبانی</p>
+                        <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center dark:border-none dark:bg-[var(--background-dark-footer)]">
+                    <img src="./assets/images/Frame 1000005391.svg" alt="fax" class="w-16 h-16 dark:hidden">
+                    <img src="./assets/images/fax-dark-sm.svg" alt="fax" class="hidden w-16 h-16 dark:block">
+                    <div class="flex flex-col gap-1 items-center justify-center">
+                        <p>فکس</p>
+                        <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full hidden gap-7 flex-col max-sm:flex">
+                <div class="flex flex-col gap-3">
+                    <strong class="px-3 font-[YekanBakh-bold] text-sm">با ما در ارتباط باش</strong>
+                    <p class="text-xs font-[YekanBakh-regular] px-3 text-[var(--neutral-2)] dark:text-white">اگه میخوای اولین نفری باشی که از فیچرهای جدید  و تخفیفات با خبر بشی.</p>
+                </div>
+                <div class="px-3">
+                    <div class="flex flex-row justify-center border-1 border-[var(--neutral-5)] rounded-lg pr-7 pl-1 py-1">
+                        <input type="text" name="" id="" placeholder="ایمیل" class="pb-1.5 border-none focus:outline-none placeholder:font-[YekanBakh-semi-bold] text-sm text-[var(--gray-placeholder)]">
+                        <button class="mr-auto border-none bg-[var(--primary)] rounded-lg text-[var(--neutral-11)] px-4 py-2 font-[YekanBakh-semi-bold]">ارسال</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3 px-3 text-[8px] font-[YekanBakh-regular] text-[var(--neutral-2)] dark:text-[var(--neutral-9)]">
+                    <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center dark:border-none dark:bg-[var(--background-dark-footer)]">
+                        <img src="./assets/images/Frame 1000005390.svg" alt="location" class="w-10 h-10 dark:hidden">
+                        <img src="./assets/images/location-dark-sm.svg" alt="location" class="hidden w-10 h-10 dark:block">
                         <address class="not-italic" class="px-2">آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</address>
                     </div>
-                    <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center">
-                        <img src="./assets/images/Frame 1000005390 (1).svg" alt="telephone" class="w-16 h-16">
-                        <div class="flex flex-col gap-1 items-center justify-center">
-                            <p>تلفن پشتیبانی</p>
-                            <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center">
-                        <img src="./assets/images/Frame 1000005391.svg" alt="fax" class="w-16 h-16">
-                        <div class="flex flex-col gap-1 items-center justify-center">
-                            <p>فکس</p>
-                            <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full hidden gap-7 flex-col max-sm:flex">
                     <div class="flex flex-col gap-3">
-                        <strong class="px-3 font-[YekanBakh-bold] text-sm">با ما در ارتباط باش</strong>
-                        <p class="text-xs font-[YekanBakh-regular] px-3 text-[var(--neutral-2)]">اگه میخوای اولین نفری باشی که از فیچرهای جدید  و تخفیفات با خبر بشی.</p>
-                    </div>
-                    <div class="px-3">
-                        <div class="flex flex-row justify-center border-1 border-[var(--neutral-5)] rounded-lg pr-7 pl-1 py-1">
-                            <input type="text" name="" id="" placeholder="ایمیل" class="pb-1.5 border-none focus:outline-none placeholder:font-[YekanBakh-semi-bold] text-sm text-[var(--gray-placeholder)]">
-                            <button class="mr-auto border-none bg-[var(--primary)] rounded-lg text-[var(--neutral-11)] px-4 py-2 font-[YekanBakh-semi-bold] text-sm">ارسال</button>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 px-3 text-[8px] font-[YekanBakh-regular] text-[var(--neutral-2)]">
-                        <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center">
-                            <img src="./assets/images/Frame 1000005390.svg" alt="location" class="w-10 h-10">
-                            <address class="not-italic" class="px-2">آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</address>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="w-full flex flex-row gap-2 border-1 border-[var(--neutral-8)] rounded-xl px-2 py-3">
-                                <img src="./assets/images/Frame 1000005390 (1).svg" alt="telephone" class="w-10 h-10">
-                                <div class="flex flex-col gap-1 items-start justify-center">
-                                    <p>تلفن پشتیبانی</p>
-                                    <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-                                </div>
+                        <div class="w-full flex flex-row gap-2 border-1 border-[var(--neutral-8)] rounded-xl px-2 py-3 dark:border-none dark:bg-[var(--background-dark-footer)]">
+                            <img src="./assets/images/Frame 1000005390 (1).svg" alt="telephone" class="w-10 h-10 dark:hidden">
+                            <img src="./assets/images/tel-dark-sm-footer.svg" alt="telephone" class="hidden w-10 h-10 dark:block">
+                            <div class="flex flex-col gap-1 items-start justify-center">
+                                <p>تلفن پشتیبانی</p>
+                                <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
                             </div>
-                            <div class="w-full flex flex-row gap-2 border-1 border-[var(--neutral-8)] rounded-xl px-2 py-3">
-                                <img src="./assets/images/Frame 1000005391.svg" alt="fax" class="w-10 h-10">
-                                <div class="flex flex-col gap-1 items-start justify-center">
-                                    <p>فکس</p>
-                                    <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-                                </div>
+                        </div>
+                        <div class="w-full flex flex-row gap-2 border-1 border-[var(--neutral-8)] rounded-xl px-2 py-3 dark:border-none dark:bg-[var(--background-dark-footer)]">
+                            <img src="./assets/images/Frame 1000005391.svg" alt="fax" class="w-10 h-10 dark:hidden">
+                            <img src="./assets/images/fax-dark-sm.svg" alt="fax" class="hidden w-10 h-10 dark:block">
+                            <div class="flex flex-col gap-1 items-start justify-center">
+                                <p>فکس</p>
+                                <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] mt-10 mb-5 text-center px-4">تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.</p>
-                </div>
-            </footer>
-        </main>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const button = document.getElementById("lightDarkButton");
-                const menu = document.getElementById("lightDarkMenu");
-                menu.classList.add("hidden");
+            </div>
+            <div>
+                <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] mt-10 mb-5 text-center px-4 dark:text-white">تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.</p>
+            </div>
+        </footer>
 
-                button.addEventListener("mouseenter", () => {
-                    menu.classList.remove("hidden");
-                });
-
-                menu.addEventListener("mouseenter", () => {
-                    menu.classList.remove("hidden");
-                });
-                
-                menu.addEventListener("mouseleave", () => {
-                    menu.classList.add("hidden");
-                });
-
-                document.addEventListener("click", (event) => {
-                    if (!button.contains(event.target) && !menu.contains(event.target)) {
-                        menu.classList.add("hidden");
-                    }
-                });
-
-                const lightOn = document.getElementById("light-on");
-                const darkOn = document.getElementById("dark-on");
-                const autoOn = document.getElementById("auto-on");
-                lightOn.classList.add("hidden");
-                darkOn.classList.add("hidden");
-
-                const darkModeButton = document.getElementById("darkModeButton");
-                const lightModeButton = document.getElementById("lightModeButton");
-                darkModeButton.addEventListener("click", () => {
-                    document.documentElement.classList.add("dark");
-                    darkOn.classList.remove("hidden");
-                    lightOn.classList.add("hidden");
-                    autoOn.classList.add("hidden");
-                });
-                lightModeButton.addEventListener("click", () => {
-                    document.documentElement.classList.remove("dark");
-                    lightOn.classList.remove("hidden");
-                    darkOn.classList.add("hidden");
-                    autoOn.classList.add("hidden");
-                });
-                autoModeButton.addEventListener("click", () => {
-                    document.documentElement.classList.remove("dark");
-                    autoOn.classList.remove("hidden");
-                    darkOn.classList.add("hidden");
-                    lightOn.classList.add("hidden");
-                });
-            });
-        </script>
+        <script src="./toggleTheme.js"></script>
     </body>
 </html>

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+@tailwind utilities;
 
 
 @font-face {
@@ -81,13 +82,18 @@
     /* dark colors */
     --primary-hover-dark: rgba(107, 164, 250, 1);
     --background-dark: rgba(255, 255, 255, 1);
-    --background-dark-2: rgba(6,12,24,255);
-    --background-dark-light: rgba(11,25,45,255);
+    --background-dark-2: rgba(6,12,24);
+    --background-dark-footer: rgba(8, 16, 33, 1);
+    --background-dark-light: rgba(11,25,45);
+    --background-dark-light-2: rgba(14, 30, 52, 1);
     --on-background-dark: rgba(4, 8, 16, 1);
     --text-white: rgba(230, 230, 230, 1);
+    --text-white-2: rgba(240, 240, 240, 1);
     --surface-dark: rgba(230, 233, 239, 1);
     --border-dark: rgba(41, 50, 66, 1);
+    --border-dark-2: rgba(47, 49, 50, 1);
     --placeholder-dark: rgba(109, 117, 129, 1);
+    --button-background-dark: rgba(18, 37, 73, 1);
 }
 
 html, body {
@@ -98,11 +104,6 @@ body {
    font-size: 16px; 
 }
 
-#index {
-    background: linear-gradient(to bottom, #edf5ff 0%, #ffffff 40%, #ffffff 40%, #fcfcfc 50%, #fcfcfc 90%, #ffffff 100%); 
-    color: var(--black-text);
-    height: 100%;
-}
 
 .circle {
     width: 450px;
@@ -149,7 +150,7 @@ body {
         linear-gradient(to bottom right, #eff1fd67 0%, transparent 30%);
 }
 
-
+/* 
 #about-me {
     background: linear-gradient(to bottom, white 0%, #fcfcfc 20%);
 }
@@ -159,4 +160,4 @@ body {
     #about-me {
         background: linear-gradient(to bottom, #f7f9fb 0%, transparent 20%, #f7f9fb 50%);
     }
-}
+} */

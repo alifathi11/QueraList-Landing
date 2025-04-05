@@ -3,11 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./src/main.css">
         <link href="./src/output.css" rel="stylesheet">
         <title>Contact Me</title>
     </head>
-    <body id="contact-me" class="bg-[#fcfcfc] mg-md:bg-[linear-gradient(to_bottom,_#f7f9fb_0%,_transparent_20%,_#f7f9fb_50%)] dark:bg-[var(--background-dark-2)]">
+    <body id="contact-me" class="bg-[#fcfcfc] mg-md:bg-[linear-gradient(to_bottom,_#f7f9fb_0%,_transparent_20%,_#f7f9fb_50%)] dark:bg-none dark:bg-[var(--background-dark-2)]">
         <header class="fixed z-10 top-0 right-0 left-0 w-full bg-[var(--background-light)] flex flex-row items-center justify-between px-20 py-6 max-lg:px-10 max-md:justify-center max-sm:py-3 dark:bg-[var(--background-dark-2)]">
             <img src="./assets/images/hamburger.svg" alt="hamburger menu" class="hidden absolute right-6 max-md:inline-block dark:hidden">
             <img src="./assets/images/hamburger-dark.svg" alt="hamburger menu" class="hidden absolute right-6 dark:max-md:inline-block">
@@ -21,8 +20,8 @@
                 <a href="" target="_blank" class="border-none py-2.5 px-7 font-[YekanBakh-regular] text-base text-[var(--neutral-11)] bg-[var(--primary)] rounded-lg">ورود به اپلیکیشن</a>
                     
                 <div>
-                    <button id="lightDarkButton-light" class="border-[1.5px] border-[var(--neutral-7)] rounded-lg p-2.5 flex justify-center items-center dark:hidden"><img src="./assets/images/dark-light.svg" alt="light-dark mode"></button>
-                    <button id="lightDarkButton-dark" class="border-[1.5px] border-[var(--neutral-2)] rounded-lg p-2.5 hidden justify-center items-center dark:flex"><img src="./assets/images/dark-light-2.svg" alt="light-dark mode"></button>
+                    <button id="lightDarkButton-light" class="border-[1.5px] border-[var(--neutral-7)] rounded-lg p-2.5 flex justify-center items-center dark:hidden cursor-pointer"><img src="./assets/images/dark-light.svg" alt="light-dark mode"></button>
+                    <button id="lightDarkButton-dark" class="border-[1.5px] border-[var(--neutral-2)] rounded-lg p-2.5 hidden justify-center items-center dark:flex cursor-pointer"><img src="./assets/images/dark-light-2.svg" alt="light-dark mode"></button>
                 </div>
                 
                 <div id="lightDarkMenu" class="z-20 absolute top-14 w-60 rounded-lg bg-[var(--background-light)] border-1 border-[var(--neutral-7)] 
@@ -245,13 +244,13 @@
                 <input type="text" name="" id="" placeholder="ایمیل" class="pb-1.5 border-none focus:outline-none placeholder:font-[YekanBakh-semi-bold] text-sm text-[var(--gray-placeholder)]">
                 <button class="mr-auto border-none bg-[var(--primary)] rounded-lg text-[var(--neutral-11)] px-4 py-2 font-[YekanBakh-semi-bold]">ارسال</button>
             </div>
-            <div class="w-full grid grid-cols-3 gap-7 max-sm:hidden px-5">
-                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl py-4 px-7 items-center text-center">
+            <div class="w-full grid grid-cols-3 gap-7 max-sm:hidden px-5 mt-5">
+                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl py-4 px-7 items-center text-center dark:border-none dark:bg-[var(--background-dark-footer)]">
                     <img src="./assets/images/Frame 1000005390.svg" alt="location" class="w-16 h-16 dark:hidden">
                     <img src="./assets/images/location-dark-sm.svg" alt="location" class="hidden w-16 h-16 dark:block">
                     <address class="not-italic" class="px-2">آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</address>
                 </div>
-                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center">
+                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center dark:border-none dark:bg-[var(--background-dark-footer)]">
                     <img src="./assets/images/Frame 1000005390 (1).svg" alt="telephone" class="w-16 h-16 dark:hidden">
                     <img src="./assets/images/tel-dark-sm-footer.svg" alt="telephone" class="hidden w-16 h-16 dark:block">
                     <div class="flex flex-col gap-1 items-center justify-center">
@@ -259,7 +258,7 @@
                         <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center">
+                <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center dark:border-none dark:bg-[var(--background-dark-footer)]">
                     <img src="./assets/images/Frame 1000005391.svg" alt="fax" class="w-16 h-16 dark:hidden">
                     <img src="./assets/images/fax-dark-sm.svg" alt="fax" class="hidden w-16 h-16 dark:block">
                     <div class="flex flex-col gap-1 items-center justify-center">
@@ -281,13 +280,13 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3 px-3 text-[8px] font-[YekanBakh-regular] text-[var(--neutral-2)] dark:text-[var(--neutral-9)]">
-                    <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center">
+                    <div class="flex flex-col gap-4 border-1 border-[var(--neutral-8)] rounded-xl pt-4 pb-2 px-7 items-center text-center dark:border-none dark:bg-[var(--background-dark-footer)]">
                         <img src="./assets/images/Frame 1000005390.svg" alt="location" class="w-10 h-10 dark:hidden">
                         <img src="./assets/images/location-dark-sm.svg" alt="location" class="hidden w-10 h-10 dark:block">
                         <address class="not-italic" class="px-2">آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</address>
                     </div>
                     <div class="flex flex-col gap-3">
-                        <div class="w-full flex flex-row gap-2 border-1 border-[var(--neutral-8)] rounded-xl px-2 py-3">
+                        <div class="w-full flex flex-row gap-2 border-1 border-[var(--neutral-8)] rounded-xl px-2 py-3 dark:border-none dark:bg-[var(--background-dark-footer)]">
                             <img src="./assets/images/Frame 1000005390 (1).svg" alt="telephone" class="w-10 h-10 dark:hidden">
                             <img src="./assets/images/tel-dark-sm-footer.svg" alt="telephone" class="hidden w-10 h-10 dark:block">
                             <div class="flex flex-col gap-1 items-start justify-center">
@@ -295,7 +294,7 @@
                                 <p> ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
                             </div>
                         </div>
-                        <div class="w-full flex flex-row gap-2 border-1 border-[var(--neutral-8)] rounded-xl px-2 py-3">
+                        <div class="w-full flex flex-row gap-2 border-1 border-[var(--neutral-8)] rounded-xl px-2 py-3 dark:border-none dark:bg-[var(--background-dark-footer)]">
                             <img src="./assets/images/Frame 1000005391.svg" alt="fax" class="w-10 h-10 dark:hidden">
                             <img src="./assets/images/fax-dark-sm.svg" alt="fax" class="hidden w-10 h-10 dark:block">
                             <div class="flex flex-col gap-1 items-start justify-center">
@@ -310,62 +309,6 @@
                 <p class="font-[YekanBakh-regular] text-sm text-[var(--neutral-3)] mt-10 mb-5 text-center px-4 dark:text-white">تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.</p>
             </div>
         </footer>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const buttonLight = document.getElementById("lightDarkButton-light");
-                const buttonDark = document.getElementById("lightDarkButton-dark");
-                const menu = document.getElementById("lightDarkMenu");
-                menu.classList.add("hidden");
-
-                buttonLight.addEventListener("mouseenter", () => {
-                    menu.classList.remove("hidden");
-                });
-
-                buttonDark.addEventListener("mouseenter", () => {
-                    menu.classList.remove("hidden");
-                });
-
-                menu.addEventListener("mouseenter", () => {
-                    menu.classList.remove("hidden");
-                });
-                
-                menu.addEventListener("mouseleave", () => {
-                    menu.classList.add("hidden");
-                });
-
-                document.addEventListener("click", (event) => {
-                    if (!button.contains(event.target) && !menu.contains(event.target)) {
-                        menu.classList.add("hidden");
-                    }
-                });
-
-                const lightOn = document.getElementById("light-on");
-                const darkOn = document.getElementById("dark-on");
-                const autoOn = document.getElementById("auto-on");
-                lightOn.classList.add("hidden");
-                darkOn.classList.add("hidden");
-
-                const darkModeButton = document.getElementById("darkModeButton");
-                const lightModeButton = document.getElementById("lightModeButton");
-                darkModeButton.addEventListener("click", () => {
-                    document.documentElement.classList.add("dark");
-                    darkOn.classList.remove("hidden");
-                    lightOn.classList.add("hidden");
-                    autoOn.classList.add("hidden");
-                });
-                lightModeButton.addEventListener("click", () => {
-                    document.documentElement.classList.remove("dark");
-                    lightOn.classList.remove("hidden");
-                    darkOn.classList.add("hidden");
-                    autoOn.classList.add("hidden");
-                });
-                autoModeButton.addEventListener("click", () => {
-                    document.documentElement.classList.remove("dark");
-                    autoOn.classList.remove("hidden");
-                    darkOn.classList.add("hidden");
-                    lightOn.classList.add("hidden");
-                });
-            });
-        </script>
+        <script src="./toggleTheme.js"></script>
     </body>
 </html>
